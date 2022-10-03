@@ -5,7 +5,7 @@ import Meals from "./components/Meals/Meals";
 import About from "./components/About/About";
 import NotFound from "./components/NotFound/NotFound";
 import Main from "./components/Main/Main";
-import axios from 'axios';
+import axios from "axios";
 
 function App() {
   const router = createBrowserRouter([
@@ -16,7 +16,9 @@ function App() {
         {
           path: "/meals",
           loader: () => {
-            return axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${'Tourtiere'}`);
+            return axios.get(
+              `https://www.themealdb.com/api/json/v1/1/search.php?s=${"Tourtiere"}`
+            );
           },
           element: <Meals></Meals>,
         },
@@ -37,5 +39,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
