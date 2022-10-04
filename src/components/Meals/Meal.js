@@ -1,13 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Meal = ({ meal }) => {
+const Meal = ({ meal, handleMealDetail }) => {
   const { strInstructions, strMealThumb, strMeal } = meal;
 
-  const navigate = useNavigate();
-  const handleEatNow = () => {
-    navigate(`/meal/${strMeal}`)
-  }
+  /*  
+    const navigate = useNavigate();
+    const handleEatNow = () => {
+    navigate(`/meal/${strMeal}`);
+  }; 
+  */
 
   return (
     <div className="col-md-4">
@@ -17,7 +19,11 @@ const Meal = ({ meal }) => {
         <strong>Description: </strong>
         {strInstructions.substring(0, 250)}
       </p>
-      <button onClick={handleEatNow} type="button" className="btn btn-primary">
+      <button
+        onClick={() => handleMealDetail(meal)}
+        type="button"
+        className="btn btn-primary"
+      >
         Eat Now
       </button>
     </div>

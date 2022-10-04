@@ -17,7 +17,7 @@ function App() {
           path: "/meals",
           loader: () => {
             return axios.get(
-              `https://www.themealdb.com/api/json/v1/1/search.php?s=${"Tourtiere"}`
+              `https://www.themealdb.com/api/json/v1/1/search.php?s=${""}`
             );
           },
           element: <Meals></Meals>,
