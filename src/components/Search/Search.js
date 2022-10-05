@@ -1,13 +1,18 @@
 import React, { useState } from "react";
-import Examples from "../Examples/Examples";
+import { useNavigate } from "react-router-dom";
 
-const Search = () => {
-  const [searchInput, setSearchInput] = useState();
+const Search = ({ handleGetData }) => {
+  const [searchInput, setSearchInput] = useState("");
   const handleChange = (e) => {
     e.preventDefault();
     setSearchInput(e.target.value);
   };
-  console.log(searchInput);
+
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate(`/meal/${searchInput}`);
+    console.log('clicked');
+  };
 
   return (
     <div>
@@ -19,9 +24,15 @@ const Search = () => {
           placeholder="Are You Hungry!"
           onChange={handleChange}
         />
-        <button className="btn btn-info ms-2">Search</button>
+        <div onClick={handleNavigate}>
+          <button
+            onClick={() => handleGetData(searchInput)}
+            className="btn btn-info ms-2"
+          >
+            Search
+          </button>
+        </div>
       </div>
-      <Examples handleChange={handleChange}></Examples>
     </div>
   );
 };

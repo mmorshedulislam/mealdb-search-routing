@@ -1,15 +1,13 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
 
-const MealDetails = ({ detail }) => {
-  const { strMealThumb, strMeal, strInstructions } = detail;
+const MealDetails = () => {
+  const meal = useLoaderData();
+  console.log(meal.data.meals);
   return (
     <div>
-      <h2 className="text-center">Meal Details</h2>
-      <div className="mx-auto">
-        <img src={strMealThumb} className={`img-fluid`} alt="" />
-        <h3>{strMeal}</h3>
-        <p>{strInstructions} ...</p>
-      </div>
+      <h2 className="text-center mt-3">Meal Details</h2>
+      <div className="mx-auto"></div>
     </div>
   );
 };

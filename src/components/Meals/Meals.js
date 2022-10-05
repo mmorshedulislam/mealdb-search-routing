@@ -6,15 +6,8 @@ import MealDetails from "./MealDetails";
 const Meals = () => {
   const meals = useLoaderData().data.meals;
 
-  const getSearch = () => {
-    const searchInput = document.getElementById("search-meal");
-    const searchInputValue = searchInput.value;
-    searchInput.value = ``;
-    return searchInputValue;
-  };
-
   const [detail, setDetail] = useState({});
-  console.log(detail);
+  // console.log(detail);
   const handleMealDetail = (selectedMeal) => {
     setDetail(selectedMeal);
   };

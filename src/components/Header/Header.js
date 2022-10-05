@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Search from "../Search/Search";
 import "./Header.css";
 
-const Header = () => {
+const Header = ({handleGetData}) => {
   return (
     <div className="container">
       <nav className="menu">
@@ -10,6 +11,7 @@ const Header = () => {
         <NavLink to="/meals">Meals</NavLink>
         <NavLink to={`/about`}>About</NavLink>
       </nav>
+      <Search handleGetData={handleGetData}></Search>
       {/* Others content here */}
     </div>
   );

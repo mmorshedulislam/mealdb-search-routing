@@ -1,13 +1,11 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Header from "../Header/Header";
-import Search from "../Search/Search";
 
-const Main = () => {
+const Main = ({handleGetData}) => {
   return (
     <div>
-      <Header></Header>
-      <Search></Search>
+      <Header handleGetData={handleGetData}></Header>
       <Outlet></Outlet>
     </div>
   );
